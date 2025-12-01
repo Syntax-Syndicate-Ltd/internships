@@ -568,6 +568,7 @@
     bottom: 24px;
     right: 24px;
     width: 280px;
+    max-width: calc(100vw - 48px);
     background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
@@ -595,8 +596,8 @@
     right: 8px;
     width: 32px;
     height: 32px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -607,7 +608,7 @@
 }
 
 .corner-ad-close:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     transform: rotate(90deg);
 }
 
@@ -618,42 +619,145 @@
 .corner-ad img {
     width: 100%;
     height: auto;
+    max-height: 400px;
+    object-fit: contain;
     display: block;
     transition: transform 0.3s ease;
 }
 
 .corner-ad:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
-/* Responsive */
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .corner-ad {
+        width: 260px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .corner-ad img {
+        max-height: 350px;
+    }
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .ad-popup-content {
         width: 95%;
+        max-width: 500px;
     }
+    
     .ad-popup-image {
         height: 220px;
     }
+    
+    .ad-popup-info {
+        padding: 24px 20px;
+    }
+    
+    .ad-popup-info h3 {
+        font-size: 22px;
+    }
+    
     .corner-ad {
         width: 240px;
         bottom: 16px;
         right: 16px;
     }
+    
+    .corner-ad img {
+        max-height: 300px;
+    }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
     .ad-popup-content {
         width: 96%;
+        max-width: 400px;
     }
+    
     .ad-popup-image {
         height: 180px;
     }
+    
     .ad-popup-info {
         padding: 20px 16px;
     }
+    
+    .ad-popup-info h3 {
+        font-size: 20px;
+    }
+    
+    .ad-popup-info p {
+        font-size: 14px;
+    }
+    
     .corner-ad {
-        width: calc(100% - 32px);
-        max-width: 280px;
+        width: 200px;
+        bottom: 12px;
+        right: 12px;
+    }
+    
+    .corner-ad img {
+        max-height: 250px;
+    }
+    
+    .corner-ad-close {
+        width: 28px;
+        height: 28px;
+        top: 6px;
+        right: 6px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .ad-popup-content {
+        width: 98%;
+    }
+    
+    .ad-popup-image {
+        height: 160px;
+    }
+    
+    .ad-popup-info {
+        padding: 16px 12px;
+    }
+    
+    .ad-popup-info h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .ad-popup-info p {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+    
+    .corner-ad {
+        width: 180px;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .corner-ad img {
+        max-height: 220px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .corner-ad {
+        width: 200px;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .corner-ad img {
+        max-height: 200px;
     }
 }
 </style>
@@ -781,3 +885,4 @@ document.addEventListener('keydown', function(event) {
 </script>
 </body>
 </html>
+
